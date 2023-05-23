@@ -1,36 +1,36 @@
 {
-    "quiz_name": "Test2",
-    "time_limit": 20,
+    "quiz_name": "Math Quiz",
+    "time_limit": 30,
     "question_list": [
         {
-            "question": "How are you?",
+            "question": "What is 2+2?",
             "answer_list": [
-                "Fine",
-                "Bad",
-                "Okay",
-                "Great"
+                "4",
+                "3",
+                "5",
+                "2"
             ],
-            "correct_answer": "Fine"
+            "correct_answer": "4"
         },
         {
-            "question": "Where have you been?",
+            "question": "What is the square root of 64?",
             "answer_list": [
-                "There",
-                "Here",
-                "Huh",
-                "No"
+                "4",
+                "6",
+                "8",
+                "10"
             ],
-            "correct_answer": "Here"
+            "correct_answer": "8"
         },
         {
-            "question": "Hello?",
+            "question": "What is the capital of France?",
             "answer_list": [
-                "Hey",
-                "Hi",
-                "Too",
-                "Koo"
+                "Paris",
+                "Rome",
+                "Madrid",
+                "Berlin"
             ],
-            "correct_answer": "Hi"
+            "correct_answer": "Paris"
         }
     ]
 }
