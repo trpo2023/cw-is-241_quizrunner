@@ -21,9 +21,8 @@ class Quiz:
             json.dump({"quiz_name": self.quiz_name, "time_limit": self.time_limit,"question_list": questions}, f, indent=4)
      
     @staticmethod
-    def from_json():
-        with open('quiz_parser.json') as f:
-            data = json.load(f)
+    def from_json(f):
+        data = json.load(f)
         question_list = []
         answer_list = []
         correct_answer_list = []
