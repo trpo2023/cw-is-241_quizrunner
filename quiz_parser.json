@@ -1,0 +1,36 @@
+{
+    "quiz_name": "Test2",
+    "time_limit": 20,
+    "question_list": [
+        {
+            "question": "How are you?",
+            "answer_list": [
+                "Fine",
+                "Bad",
+                "Okay",
+                "Great"
+            ],
+            "correct_answer": "Fine"
+        },
+        {
+            "question": "Where have you been?",
+            "answer_list": [
+                "There",
+                "Here",
+                "Huh",
+                "No"
+            ],
+            "correct_answer": "Here"
+        },
+        {
+            "question": "Hello?",
+            "answer_list": [
+                "Hey",
+                "Hi",
+                "Too",
+                "Koo"
+            ],
+            "correct_answer": "Hi"
+        }
+    ]
+}
