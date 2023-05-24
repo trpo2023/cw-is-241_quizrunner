@@ -24,15 +24,6 @@ class QuizrunnerApp:
         self.main_run.configure(text='Run test')
         self.main_run.pack(expand="true", fill="x", padx=6, side="top")
         self.main_run.configure(command=self.run_test)
-        self.main_new = ttk.Button(self.MainMenu)
-        self.main_new.configure(text='New test')
-        self.main_new.pack(
-            expand="false",
-            fill="x",
-            padx=6,
-            pady=3,
-            side="top")
-        self.main_new.configure(command=self.create_test)
 
         # Main widget
         self.mainwindow = self.MainMenu
@@ -45,6 +36,3 @@ class QuizrunnerApp:
         f = open(fname)
         quiz = Quiz.from_json(f)
         settingsWindow = TestPreview(quiz)
-
-    def create_test(self):
-        pass
