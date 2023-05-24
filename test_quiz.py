@@ -72,26 +72,27 @@ class TestQuiz(unittest.TestCase):
                 },
                 f,
             )
-        quiz = Quiz.from_json()
-        self.assertEqual(quiz.quiz_name, "Math Quiz")
-        self.assertEqual(quiz.time_limit, 30)
-        self.assertEqual(
-            quiz.question_list,
-            [
-                "What is 2+2?",
-                "What is the square root of 64?",
-                "What is the capital of France?",
-            ],
-        )
-        self.assertEqual(
-            quiz.answer_list,
-            [
-                ["4", "3", "5", "2"],
-                ["4", "6", "8", "10"],
-                ["Paris", "Rome", "Madrid", "Berlin"],
-            ],
-        )
-        self.assertEqual(quiz.correct_answer_list, ["4", "8", "Paris"])
+        with open("./quiz_parser.json") as f:
+            quiz = Quiz.from_json(f)
+            self.assertEqual(quiz.quiz_name, "Math Quiz")
+            self.assertEqual(quiz.time_limit, 30)
+            self.assertEqual(
+                quiz.question_list,
+                [
+                    "What is 2+2?",
+                    "What is the square root of 64?",
+                    "What is the capital of France?",
+                ],
+            )
+            self.assertEqual(
+                quiz.answer_list,
+                [
+                    ["4", "3", "5", "2"],
+                    ["4", "6", "8", "10"],
+                    ["Paris", "Rome", "Madrid", "Berlin"],
+                ],
+            )
+            self.assertEqual(quiz.correct_answer_list, ["4", "8", "Paris"])
 
 
 if __name__ == "__main__":
