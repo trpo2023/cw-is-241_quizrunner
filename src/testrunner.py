@@ -3,6 +3,8 @@ import tkinter.ttk as ttk
 from tkinter import END
 from src.testresults import TestResults
 from tkinter import messagebox as mb
+
+
 class TestRunner:
     def __init__(self, quiz):
         # build ui
@@ -108,44 +110,47 @@ class TestRunner:
         self.givenanswers = []
         self.timeleft = self.quiz.time_limit
         self.timeleft_bar.configure(value=100)
-        self.givenanswers = [-1 for i in range(len(quiz.question_list))] 
+        self.givenanswers = [-1 for i in range(len(quiz.question_list))]
         self.print_q_text()
         self.clock()
-       
+
     def clock(self):
-        self.timeleft_bar.configure(value=self.timeleft/self.quiz.time_limit*100)
-        self.timeleft_txt.configure(text= "%02d:%02d" % (self.timeleft/60, self.timeleft%60))
+        self.timeleft_bar.configure(
+            value=self.timeleft/self.quiz.time_limit*100)
+        self.timeleft_txt.configure(text="%02d:%02d" % (
+            self.timeleft/60, self.timeleft % 60))
         self.timeleft -= 1
         if (self.timeleft == -1):
             self.endtest()
         else:
             self.timeleft_txt.after(1000, self.clock)
-        
+
     def print_q_text(self):
         self.qtext.configure(state="normal")
-        self.qtext.delete(1.0,tk.END)
-        self.qtext.insert(END, "Question %s/%s.\n\n" % (str(self.current_q_index+1),\
+        self.qtext.delete(1.0, tk.END)
+        self.qtext.insert(END, "Question %s/%s.\n\n" % (str(self.current_q_index+1),
                           len(self.quiz.question_list)))
-        self.qtext.insert(END, self.quiz.question_list[self.current_q_index]+"\n\n")
+        self.qtext.insert(
+            END, self.quiz.question_list[self.current_q_index]+"\n\n")
         self.qtext.insert(END, "A) %s\nB) %s\nC) %s\nD) %s\n" % (
-                            self.quiz.answer_list[self.current_q_index][0],\
-                                self.quiz.answer_list[self.current_q_index][1],\
-                                    self.quiz.answer_list[self.current_q_index][2],\
-                                        self.quiz.answer_list[self.current_q_index][3]))
-        self.qtext.configure(state="disabled") 
+            self.quiz.answer_list[self.current_q_index][0],
+            self.quiz.answer_list[self.current_q_index][1],
+            self.quiz.answer_list[self.current_q_index][2],
+            self.quiz.answer_list[self.current_q_index][3]))
+        self.qtext.configure(state="disabled")
         self.ans.set(self.givenanswers[self.current_q_index])
-    
+
     def run(self):
         self.mainwindow.mainloop()
 
     def go_prev(self):
         if self.current_q_index != 0:
-            self.current_q_index-=1
+            self.current_q_index -= 1
             self.print_q_text()
 
     def go_next(self):
         if self.current_q_index+1 != len(self.quiz.question_list):
-            self.current_q_index+=1
+            self.current_q_index += 1
             self.print_q_text()
 
     def set_answer(self):
@@ -153,8 +158,8 @@ class TestRunner:
 
     def endtest(self):
         if self.timeleft <= 0 or mb.askyesno(
-            title="Confirmation",
-            message="Are you sure you want to end the test?"):
+                title="Confirmation",
+                message="Are you sure you want to end the test?"):
             for a in self.givenanswers:
                 a = self.quiz.answer_list[self.current_q_index][a]
             testrw = TestResults(self.quiz, self.givenanswers, self.timeleft)
