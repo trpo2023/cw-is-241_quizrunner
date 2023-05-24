@@ -1,6 +1,6 @@
 import tkinter as tk
 import tkinter.ttk as ttk
-from src.testpreview import *
+from src.testpreview import TestPreview
 from src.quiz import Quiz
 from tkinter import filedialog as fd
 
@@ -37,4 +37,4 @@ class QuizrunnerApp:
         fname = fd.askopenfilename()
         f = open(fname)
         quiz = Quiz.from_json(f)
-        settingsWindow = TestPreview(quiz)
+        TestPreview(quiz)

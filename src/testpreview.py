@@ -53,5 +53,5 @@ class TestPreview:
         self.TestPreview.destroy()
 
     def pwok(self):
-        trwindow = TestRunner(self.savedquiz)
+        TestRunner(self.savedquiz)
         self.TestPreview.destroy()
