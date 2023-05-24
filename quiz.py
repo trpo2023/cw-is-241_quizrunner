@@ -2,7 +2,8 @@ import json
 
 
 class Quiz:
-    def __init__(self, quiz_name, time_limit, question_list, answer_list, correct_answer_list):
+    def __init__(self, quiz_name, time_limit, question_list,
+                 answer_list, correct_answer_list):
         self.quiz_name = quiz_name
         self.time_limit = time_limit
         self.question_list = question_list
@@ -35,4 +36,5 @@ class Quiz:
             question_list.append(iterator['question'])
             answer_list.append(iterator['answer_list'])
             correct_answer_list.append(iterator['correct_answer'])
-        return Quiz(quiz_name, time_limit, question_list, answer_list, correct_answer_list)
+        return Quiz(quiz_name, time_limit, question_list,
+                    answer_list, correct_answer_list)
