@@ -1,5 +1,6 @@
 import json
 
+
 class Quiz:
     def __init__(self, quiz_name, time_limit, question_list, answer_list, correct_answer_list):
         self.quiz_name = quiz_name
@@ -18,8 +19,9 @@ class Quiz:
             }
             questions.append(question)
         with open('quiz_parser.json', 'w') as f:
-            json.dump({"quiz_name": self.quiz_name, "time_limit": self.time_limit,"question_list": questions}, f, indent=4)
-     
+            json.dump({"quiz_name": self.quiz_name, "time_limit": self.time_limit,
+                      "question_list": questions}, f, indent=4)
+
     @staticmethod
     def from_json():
         with open('quiz_parser.json') as f:
