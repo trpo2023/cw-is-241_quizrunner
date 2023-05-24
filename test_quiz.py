@@ -1,6 +1,6 @@
 import unittest
 import json
-from quiz import Quiz
+from src.quiz import Quiz
 
 class TestQuiz(unittest.TestCase):
 

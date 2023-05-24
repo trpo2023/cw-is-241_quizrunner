@@ -1,3 +1,9 @@
 /venv
 /venv/**
 .vscode/settings.json
+__pycache__/quiz.cpython-310.pyc
+src/__pycache__/mainmenu.cpython-310.pyc
+src/__pycache__/quiz.cpython-310.pyc
+src/__pycache__/testpreview.cpython-310.pyc
+src/__pycache__/testresults.cpython-310.pyc
+src/__pycache__/testrunner.cpython-310.pyc
